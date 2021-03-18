@@ -1,5 +1,7 @@
 <?php 
 
+require_once 'crud.php';
+
 $host = 'localhost';
 $name = 'test-orders';
 $user = 'root';
@@ -17,5 +19,6 @@ try {
 
 }
 
+$crud = new crud($pdo);
 
 ?>
