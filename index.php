@@ -1,3 +1,42 @@
+<?php 
+
+require_once 'db/conn.php';
+
+$notice = ['empty-fields' => '', 'saved' => ''];
+
+if (isset($_POST['save'])) {
+
+    if (empty($_POST['name']) || empty($_POST['sdate']) || empty($_POST['nums'])) {
+
+        $notice['empty-fields'] = 'All fields are required to continue.';
+
+    } else {
+
+        $name = htmlspecialchars($_POST['name']);
+        $sdate = htmlspecialchars($_POST['sdate']);
+        $nums = htmlspecialchars($_POST['nums']);
+
+        $isSuccess = $crud->save($name, $sdate, $nums);
+
+        if ($isSuccess) {
+
+            $notice['saved'] = 'Your inputs has been saved successfully.';
+
+        } else {
+
+            $notice['saved'] = 'There was an error while saving your inputs. Please try again.';
+
+        }
+
+    }
+
+}
+
+
+?>
+
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -40,7 +79,7 @@
     <h2>Outputs:</h2>
 
     <div class="output-container">
-    
+
     </div>
 
 </body>
