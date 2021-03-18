@@ -8,6 +8,30 @@ class crud {
         $this->db = $conn;
     }
 
+    public function save($name, $sdate, $nums) {
+
+        try {
+
+            $sql = "INSERT INTO test (name, sdate, nums) VALUES (:name, :sdate, :nums)";
+
+            $stmt = $this->db->prepare($sql);
+
+            $stmt->bindparam(':name', $name);
+            $stmt->bindparam(':sdate', $sdate);
+            $stmt->bindparam(':nums', $nums);
+
+            $stmt->execute();
+
+            return true;
+
+        } catch (PDOException $e) {
+
+            return false;
+
+        }
+
+    }
+
     public function defaultOrder() {
 
         $sql = "SELECT * FROM test";
