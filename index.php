@@ -32,6 +32,73 @@ if (isset($_POST['save'])) {
 
 }
 
+if (isset($_POST['byID'])) {
+
+    $results = $crud->defaultOrder();
+
+    // foreach($results as $result) {
+
+    //     echo $result['name'] . '<br>';
+    //     echo $result['sdate'] . '<br>';
+    //     echo $result['nums'] . '<br>';
+    //     echo '<br>';
+
+    // }
+
+} else if (isset($_POST['byName'])) {
+
+    $results = $crud->byName();
+
+    // foreach($results as $result) {
+
+    //     echo $result['name'] . '<br>';
+    //     echo $result['sdate'] . '<br>';
+    //     echo $result['nums'] . '<br>';
+    //     echo '<br>';
+
+    // }
+
+} else if (isset($_POST['byDate'])) {
+
+    $results = $crud->byDate();
+
+    // foreach ($results as $result) {
+
+    //     echo $result['name'] . '<br>';
+    //     echo $result['sdate'] . '<br>';
+    //     echo $result['nums'] . '<br>';
+    //     echo '<br>';
+
+    // }
+
+} else if (isset($_POST['byNum'])) {
+
+    $results = $crud->byNum();
+
+    // foreach ($results as $result) {
+
+    //     echo $result['name'] . '<br>';
+    //     echo $result['sdate'] . '<br>';
+    //     echo $result['nums'] . '<br>';
+    //     echo '<br>';
+
+    // }
+
+} else {
+
+    $results = $crud->defaultOrder();
+
+    // foreach($results as $result) {
+
+    //     echo $result['name'] . '<br>';
+    //     echo $result['sdate'] . '<br>';
+    //     echo $result['nums'] . '<br>';
+    //     echo '<br>';
+
+    // }
+
+}
+
 
 ?>
 
@@ -70,6 +137,14 @@ if (isset($_POST['save'])) {
                 <button form="form1" name="save">SAVE</button>
             </section>
 
+            <section>
+            <br>
+                <button form="form1" name="byID">Sort by ID</button>
+                <button form="form1" name="byName">Sort by Name</button>
+                <button form="form1" name="byDate">Sort by Date</button>
+                <button form="form1" name="byNum">Sort by Number</button>
+            </section>
+
         </form>
 
     </div>
@@ -79,6 +154,14 @@ if (isset($_POST['save'])) {
     <h2>Outputs:</h2>
 
     <div class="output-container">
+
+        <?php foreach ($results as $result) { ?>
+
+            <?php echo $result['name'] . '<br>'; ?>
+            <?php echo $result['sdate'] . '<br>'; ?>
+            <?php echo $result['nums'] . '<br><br>'; ?>
+
+        <?php } ?>
 
     </div>
 
