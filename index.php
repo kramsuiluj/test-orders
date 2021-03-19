@@ -36,66 +36,21 @@ if (isset($_POST['byID'])) {
 
     $results = $crud->defaultOrder();
 
-    // foreach($results as $result) {
-
-    //     echo $result['name'] . '<br>';
-    //     echo $result['sdate'] . '<br>';
-    //     echo $result['nums'] . '<br>';
-    //     echo '<br>';
-
-    // }
-
 } else if (isset($_POST['byName'])) {
 
     $results = $crud->byName();
-
-    // foreach($results as $result) {
-
-    //     echo $result['name'] . '<br>';
-    //     echo $result['sdate'] . '<br>';
-    //     echo $result['nums'] . '<br>';
-    //     echo '<br>';
-
-    // }
 
 } else if (isset($_POST['byDate'])) {
 
     $results = $crud->byDate();
 
-    // foreach ($results as $result) {
-
-    //     echo $result['name'] . '<br>';
-    //     echo $result['sdate'] . '<br>';
-    //     echo $result['nums'] . '<br>';
-    //     echo '<br>';
-
-    // }
-
 } else if (isset($_POST['byNum'])) {
 
     $results = $crud->byNum();
 
-    // foreach ($results as $result) {
-
-    //     echo $result['name'] . '<br>';
-    //     echo $result['sdate'] . '<br>';
-    //     echo $result['nums'] . '<br>';
-    //     echo '<br>';
-
-    // }
-
 } else {
 
     $results = $crud->defaultOrder();
-
-    // foreach($results as $result) {
-
-    //     echo $result['name'] . '<br>';
-    //     echo $result['sdate'] . '<br>';
-    //     echo $result['nums'] . '<br>';
-    //     echo '<br>';
-
-    // }
 
 }
 
